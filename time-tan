@@ -1,0 +1,70 @@
+#!/usr/bin/env python3
+#Program created by Voicedrew11
+import time, os, sys
+
+# Makes the header purple
+def prPurple(skk): print("\033[95m {}\033[00m" .format(skk))
+
+# Returns the Time-tan header
+def header():
+    header = "   _______                      __\n   /_  __(_)___ ___  ___        / /_____ _____\n    / / / / __ `__ \/ _ \______/ __/ __ `/ __ \ \n   / / / / / / / / /  __/_____/ /_/ /_/ / / / /\n  /_/ /_/_/ /_/ /_/\___/      \__/\__,_/_/ /_/"
+    return header
+
+# Menu
+def userInput():
+
+    os.system('clear||cls')
+    prPurple(header() + "\n")
+
+    print("""
+  1. Select an anime manually
+  2. Continue last watched anime
+  3. Exit
+            """)
+
+    while True:
+        x = input("  Select an option > ")
+
+        if x == '1':
+            os.system('clear||cls')
+            prPurple(header() + "\n")
+            y = input("\n  What do you want to watch? >  ")
+            return y
+        elif x == '2':
+            return '-c'
+        elif x == '3':
+            os.system('clear||cls')
+            sys.exit()
+        else:
+            continue
+
+
+def manualTime():
+    os.system('clear||cls')
+    prPurple(header())
+    y = input("\n  How long do you want to study? (leave blank for 25 mins) > ")
+    if y == '':
+        y = 24
+    return int(y) 
+
+def animedoroTime():
+
+    prPurple(header() + "\n")
+    inTime = manualTime()
+    curTime = 0
+    option = userInput()
+
+    while True:
+        
+        os.system('clear||cls')
+        prPurple(header() + "\n")
+        print(" ",inTime - curTime,"mins remain")
+        curTime = curTime + 1
+        time.sleep(1)
+        
+        if curTime == inTime:
+            os.system('clear||cls')
+            os.system(f'ani-cli {option}')
+            break
+
+animedoroTime()
