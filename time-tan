@@ -60,7 +60,7 @@ def animedoroTime():
         prPurple(header() + "\n")
         print(" ",inTime - curTime,"mins remain")
         curTime = curTime + 1
-        time.sleep(1)
+        time.sleep(60)
         
         if curTime == inTime:
             os.system('clear||cls')
