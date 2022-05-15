@@ -7,5 +7,5 @@ Installation instructions:
   2. Install python3 in your package manager
   3. Run: 
     
-      sudo curl -sL https://github.com/Voicedrew11/time-tan/blob/main/time-tan -o /usr/local/bin/time-tan &&
+      sudo curl -sL https://github.com/Voicedrew11/time-tan/raw/main/time-tan -o /usr/local/bin/time-tan &&
       sudo chmod +x /usr/local/bin/time-tan
