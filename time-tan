@@ -10,10 +10,15 @@ def header():
     header = "   _______                      __\n   /_  __(_)___ ___  ___        / /_____ _____\n    / / / / __ `__ \/ _ \______/ __/ __ `/ __ \ \n   / / / / / / / / /  __/_____/ /_/ /_/ / / / /\n  /_/ /_/_/ /_/ /_/\___/      \__/\__,_/_/ /_/"
     return header
 
+def sysClear():
+    if os.name == 'posix':
+        os.system('clear')
+    else:
+        os.system('cls')
+        
 # Menu
 def userInput():
-
-    os.system('clear||cls')
+    sysClear()
     prPurple(header() + "\n")
 
     print("""
@@ -26,14 +31,14 @@ def userInput():
         x = input("  Select an option > ")
 
         if x == '1':
-            os.system('clear||cls')
+            sysClear()
             prPurple(header() + "\n")
             y = input("\n  What do you want to watch? >  ")
             return y
         elif x == '2':
             return '-c'
         elif x == '3':
-            os.system('clear||cls')
+            sysClear()
             sys.exit()
         else:
             continue
@@ -56,14 +61,14 @@ def animedoroTime():
 
     while True:
         
-        os.system('clear||cls')
+        sysClear()
         prPurple(header() + "\n")
         print(" ",inTime - curTime,"mins remain")
         curTime = curTime + 1
         time.sleep(60)
         
         if curTime == inTime:
-            os.system('clear||cls')
+            sysClear()
             os.system(f'ani-cli {option}')
             break
 
