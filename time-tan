@@ -60,12 +60,12 @@ def animedoroTime():
     option = userInput()
 
     while True:
-        
-        sysClear()
-        prPurple(header() + "\n")
-        print(" ",inTime - curTime,"mins remain")
-        curTime = curTime + 1
-        time.sleep(60)
+        if inTime != 0:
+            sysClear()
+            prPurple(header() + "\n")
+            print(" ",inTime - curTime,"mins remain")
+            curTime = curTime + 1
+            time.sleep(60)
         
         if curTime == inTime:
             sysClear()
