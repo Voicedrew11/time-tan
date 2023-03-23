@@ -1,5 +1,4 @@
 #!/usr/bin/env python3
-#Program created by Voicedrew11
 import time, os, sys, argparse
 
 # optional cli arguments
