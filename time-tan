@@ -1,6 +1,12 @@
 #!/usr/bin/env python3
 #Program created by Voicedrew11
-import time, os, sys
+import time, os, sys, argparse
+
+# optional cli arguments
+parser = argparse.ArgumentParser()
+parser.add_argument('-t', '--time', help='Specify the time in minutes', type=int, required=False)
+parser.add_argument('-a', '--anime', help='Enter any anime you wish to watch', type=str, required=False)
+args = parser.parse_args()
 
 # Makes the header purple
 def prPurple(skk): print("\033[95m {}\033[00m" .format(skk))
@@ -55,9 +61,9 @@ def manualTime():
 def animedoroTime():
 
     prPurple(header() + "\n")
-    inTime = manualTime()
+    inTime =  args.time if args.time else manualTime()
     curTime = 0
-    option = userInput()
+    option = args.anime if args.anime else userInput()
 
     while True:
         if inTime != 0:
